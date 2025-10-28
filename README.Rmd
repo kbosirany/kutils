@@ -1,0 +1,143 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# kutils
+
+<!-- badges: start -->
+[![Release](https://gitlab.com/kbosirany/kutils/-/badges/release.svg)](https://gitlab.com/kbosirany/kutils.git)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPLv3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Experimental](https://img.shields.io/badge/status-experimental-orange.svg)](https://gitlab.com/kbosirany/kutils)
+[![pipeline status](https://gitlab.com/kbosirany/kutils/badges/main/pipeline.svg)](https://gitlab.com/kbosirany/kutils/commits/main)
+[![Dev coverage status](https://gitlab.com/kbosirany/kutils/badges/main/coverage.svg)](https://kbosirany.gitlab.io/kutils/coverage.html)
+<!-- badges: end -->
+
+## Overview
+
+kutils provides utility functions for data management and configuration handling in R projects. The package wraps and extends functionality from the [fairify](https://forgemia.inra.fr/umr-g-eau/fairify.git) package to streamline common data operations.
+
+## Features
+
+- **Configuration Management**: Load and manage project configurations with `loadConfig()`
+- **Data Path Handling**: Resolve and cache data paths with `getDataPath()`
+- **Cache Management**: Clean cached data with `cleanDataCache()`
+
+## Installation
+
+You can install the development version of kutils from GitHub:
+
+```{r eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("OrlandoKevin/kutils")
+```
+
+## Usage
+
+### Configuration Management
+
+Load configuration from a YAML file:
+
+```{r eval=FALSE}
+library(kutils)
+
+# Load default configuration
+cfg <- loadConfig()
+
+# Load custom configuration file
+cfg <- loadConfig(userFile = "my_config.yml")
+```
+
+### Data Path Handling
+
+Resolve data paths with caching support:
+
+```{r eval=FALSE}
+# Get data path with caching enabled (default)
+data_path <- getDataPath("my_data.csv")
+
+# Disable caching
+data_path <- getDataPath("my_data.csv", use_cache = FALSE)
+
+# Use custom configuration
+cfg <- loadConfig("my_config.yml")
+data_path <- getDataPath("my_data.csv", cfg = cfg)
+```
+
+### Cache Management
+
+Clean the data cache when needed:
+
+```{r eval=FALSE}
+# Clean default cache
+cleanDataCache()
+
+# Clean custom cache location
+cleanDataCache(cache = "/path/to/cache")
+```
+
+## Configuration File
+
+kutils uses YAML configuration files for managing data paths and modes. The default configuration is located at `inst/config.yml`. You can create your own configuration file following this structure:
+
+```yaml
+data:
+  mode: local  # or 'remote', 'production', etc.
+  local: /path/to/local/data
+  remote: /path/to/remote/data
+```
+
+## Dependencies
+
+- R (>= 4.0.0)
+- fairify
+
+## Development
+
+### Running Tests
+
+```{r eval=FALSE}
+# Run all tests
+devtools::test()
+
+# Run specific test file
+devtools::test_file("tests/testthat/test-test.R")
+```
+
+### Building Documentation
+
+```{r eval=FALSE}
+# Generate documentation
+devtools::document()
+
+# Build pkgdown site
+pkgdown::build_site()
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the AGPL-3.0 or later - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Kevin Bosirany Orlando  
+Email: kevinbosirany@gmail.com  
+ORCID: [0009-0009-2784-3108](https://orcid.org/0009-0009-2784-3108)
+
+## Acknowledgments
+
+This package builds upon the [fairify](https://forgemia.inra.fr/umr-g-eau/fairify.git) package developed by UMR G-EAU.
