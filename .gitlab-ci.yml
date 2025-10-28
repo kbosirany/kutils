@@ -2,9 +2,6 @@ stages:
   - checks
   - deploy
 
-default:
-  tags: [docker]
-
 image: rocker/geospatial:latest
 
 variables:
@@ -12,6 +9,7 @@ variables:
   R_LIBS_USER: "$CACHE_CI/lib"
 
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - $CACHE_CI
 
