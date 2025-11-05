@@ -1,5 +1,6 @@
+#' @inherit kread::read
 #' @export
 #'
-read <- function(...) {
-  kread::read(...)
+read <- function(path, ...) {
+  kread::read(path, ...)
 }
