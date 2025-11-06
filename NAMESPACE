@@ -2,10 +2,12 @@
 
 S3method(rename,data.frame)
 export(cleanDataCache)
+export(create_metadata)
 export(getDataPath)
+export(kable)
 export(loadConfig)
+export(load_metadata)
 export(read)
 import(dplyr)
-import(kmetadata)
 import(rlang)
 importFrom(stats,setNames)
