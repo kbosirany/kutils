@@ -9,7 +9,11 @@ rename.data.frame <- function(.data, ..., metadata, which, vars)  {
       metadata <- filter(metadata, !is.na(new_label))
       if (nrow(metadata) > 0) {
         new_label <- setNames(metadata$new_label, metadata$label)
-        x <- rename_with(x, ~ new_label[.] %||% ., .cols = names(new_label))
+        x <- x %>%
+          rename_with(
+            ~ new_label[.] %||% .,
+            .cols = names(new_label)[names(new_label) %in% names(x)]
+          )
       }
     },
     values = {
