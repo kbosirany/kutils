@@ -1,8 +1,13 @@
 #' @export
 #'
-rename.data.frame <- function(.data, ..., metadata, which, vars)  {
-  if (missing(metadata)) return(dplyr::rename(.data, ...))
-  x <- .data
+rename_from_metadata <- function(x, ...) {
+  UseMethod("rename_from_metadata", x)
+}
+
+#' @export
+#' @rdname rename_from_metadata
+#'
+rename_from_metadata.data.frame <- function(x, metadata, which, vars, ...) {
   switch(
     which,
     vars = {
