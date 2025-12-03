@@ -7,7 +7,14 @@ rename_from_metadata <- function(x, ...) {
 #' @export
 #' @rdname rename_from_metadata
 #'
-rename_from_metadata.data.frame <- function(x, metadata, which, vars, ...) {
+rename_from_metadata.data.frame <- function(
+  x,
+  metadata = load_metadata(x, which = which, vars = vars, ...),
+  which,
+  vars,
+  keep_old = FALSE,
+  ...
+) {
   switch(
     which,
     vars = {
@@ -26,7 +33,8 @@ rename_from_metadata.data.frame <- function(x, metadata, which, vars, ...) {
         m <- filter(metadata[[v]], !is.na(new_label))
         if (nrow(m) > 0) {
           new_label <- setNames(m$new_label, m$label)
-          x <- mutate(x, !!sym(sprintf("%s_old", v)) := !!sym(v)) %>%
+          if (keep_old) x <- mutate(x, !!sym(sprintf("%s_old", v)) := !!sym(v))
+          x <- x %>%
             mutate_at(v, ~ ifelse(. %in% names(new_label), new_label[.], .))
         }
       }
@@ -34,3 +42,4 @@ rename_from_metadata.data.frame <- function(x, metadata, which, vars, ...) {
   )
   return(x)
 }
+
