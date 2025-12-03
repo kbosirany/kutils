@@ -18,9 +18,9 @@
 #'
 #' @examples
 #' # Single string
-#' parse_date_time("01-02-2003")
+#' as_data("01-02-2003")
 #' # Vector of mixed formats
-#' parse_date_time(c("2003/02/01", "01 Mar 2004", "31-12-1999"))
+#' as_date(c("2003/02/01", "01 Mar 2004", "31-12-1999"))
 #'
 #' @export
 #'
