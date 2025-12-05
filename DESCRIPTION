@@ -15,9 +15,9 @@ Imports:
     kmetadata,
     kread
 Remotes: 
-    git::https://forgemia.inra.fr/umr-g-eau/fairify.git,
-    git::https://gitlab.com/kbosirany/kmetadata.git,
-    git::https://gitlab.com/kbosirany/kread.git
+    fairify=git::https://forge.inrae.fr/umr-g-eau/fairify.git,
+    kmetadata=git::https://gitlab.com/kbosirany/kmetadata.git,
+    kread=git::https://gitlab.com/kbosirany/kread.git
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
