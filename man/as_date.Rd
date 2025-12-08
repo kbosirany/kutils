@@ -10,7 +10,7 @@ as_date(x)
 \item{date_str}{\link{character} vector of date/time strings to parse.}
 }
 \value{
-A \link{Date} vector corresponding to parsed input. Unparseable entries
+A \link[lubridate:date_utils]{lubridate::Date} vector corresponding to parsed input. Unparseable entries
 are returned as NA.
 }
 \description{
@@ -26,7 +26,7 @@ variants supported by lubridate.
 }
 \examples{
 # Single string
-as_data("01-02-2003")
+as_date("01-02-2003")
 # Vector of mixed formats
 as_date(c("2003/02/01", "01 Mar 2004", "31-12-1999"))
 

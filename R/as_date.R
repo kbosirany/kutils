@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' # Single string
-#' as_data("01-02-2003")
+#' as_date("01-02-2003")
 #' # Vector of mixed formats
 #' as_date(c("2003/02/01", "01 Mar 2004", "31-12-1999"))
 #'
