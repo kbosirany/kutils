@@ -8,12 +8,13 @@ Authors@R:
 Description: What the package does (one paragraph).
 License: AGPL (>= 3)
 Depends:
+    dplyr
 Imports:
     fairify,
-    dplyr,
     rlang,
     kmetadata,
-    kread
+    kread,
+    lubridate
 Remotes: 
     fairify=git::https://forge.inrae.fr/umr-g-eau/fairify.git,
     kmetadata=git::https://gitlab.com/kbosirany/kmetadata.git,
