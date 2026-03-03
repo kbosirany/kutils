@@ -14,7 +14,8 @@ Imports:
     rlang,
     kmetadata,
     kread,
-    lubridate
+    lubridate,
+    kableExtra
 Remotes: 
     fairify=git::https://forge.inrae.fr/umr-g-eau/fairify.git,
     kmetadata=git::https://github.com/kbosirany/kmetadata.git,
