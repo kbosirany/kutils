@@ -17,7 +17,7 @@ Imports:
     lubridate
 Remotes: 
     fairify=git::https://forge.inrae.fr/umr-g-eau/fairify.git,
-    kmetadata=git::https://gitlab.com/kbosirany/kmetadata.git,
+    kmetadata=git::https://github.com/kbosirany/kmetadata.git,
     kread=git::https://github.com/kbosirany/kread.git
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
