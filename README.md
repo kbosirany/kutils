@@ -5,14 +5,9 @@
 
 <!-- badges: start -->
 
-[![Release](https://gitlab.com/kbosirany/kutils/-/badges/release.svg)](https://gitlab.com/kbosirany/kutils.git)
 [![License: AGPL
 v3](https://img.shields.io/badge/License-AGPLv3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Experimental](https://img.shields.io/badge/status-experimental-orange.svg)](https://gitlab.com/kbosirany/kutils)
-[![pipeline
-status](https://gitlab.com/kbosirany/kutils/badges/main/pipeline.svg)](https://gitlab.com/kbosirany/kutils/commits/main)
-[![Dev coverage
-status](https://gitlab.com/kbosirany/kutils/badges/main/coverage.svg)](https://kbosirany.gitlab.io/kutils/coverage.html)
+[![Experimental](https://img.shields.io/badge/status-experimental-orange.svg)](https://github.com/kbosirany/kutils)
 <!-- badges: end -->
 
 ## Overview
@@ -36,7 +31,7 @@ You can install the development version of kutils from GitHub:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("OrlandoKevin/kutils")
+remotes::install_github("kbosirany/kutils")
 ```
 
 ## Usage
